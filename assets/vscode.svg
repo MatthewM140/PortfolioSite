@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 979.4 256">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-2 {
+        font-family: SegoeUIEmoji, 'Segoe UI Emoji';
+        font-size: 180px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #efefef;
+      }
+    </style>
+  </defs>
+  <path class="cls-3" d="M191.98,0v219.87L0,191.35l191.98,64.64,64-26.62V30.59h.02s-.02-.05-.02-.05v-3.92L191.98,0ZM124.8,37.46l-58.8,58.13-35.4-26.66-14.59,4.87,36.02,35.6-36.02,35.6,14.59,4.88,35.4-26.66h0l58.8,58.12,35.22-14.96V52.42l-35.22-14.96ZM124.79,78.93v60.93l-40.45-30.46,40.45-30.46Z"/>
+  <text class="cls-2" transform="translate(308 189.6)"><tspan class="cls-1" x="0" y="0">V</tspan><tspan x="109.42" y="0">S Code</tspan></text>
+</svg>

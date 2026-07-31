@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Matthew McConnell is an electrical engineering student building embedded hardware, PCB systems, and visual engineering projects."
+    />
+    <title>Matthew McConnell | Engineering Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas class="light-field" data-light-field aria-hidden="true"></canvas>
+    <header class="site-header" data-header>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" data-track-section="hero">
+        <div class="hero-media" aria-hidden="true">
+          <img src="assets/pcb-red.png" alt="" />
+        </div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Electrical engineering + hands-on design</p>
+            <h1>Matthew McConnell</h1>
+            <p class="hero-lede">
+              I build embedded hardware, PCB systems, and visual engineering
+              projects that turn ideas into working machines.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#work" data-track-button="view_projects">View projects</a>
+              <a class="button secondary" href="#contact" data-track-button="get_in_touch">Get in touch</a>
+            </div>
+          </div>
+          <aside class="hero-panel" aria-label="Portfolio snapshot">
+            <div>
+              <span class="metric">3+</span>
+              <span class="metric-label">years PCB design</span>
+            </div>
+            <div>
+              <span class="metric">7+</span>
+              <span class="metric-label">years 3D visualization</span>
+            </div>
+            <div>
+              <span class="metric">ASU</span>
+              <span class="metric-label">Electrical Engineering</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="intro-strip" aria-label="Focus areas" data-track-section="focus_areas">
+        <article>
+          <span>01</span>
+          <h2>PCB systems</h2>
+          <p>Custom boards for sensing, safety, telemetry, and vehicle data.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Embedded tools</h2>
+          <p>Interfaces, controls, firmware workflows, CAN, and ESP32 systems.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>Visualization</h2>
+          <p>Photorealistic renders for hardware, vehicles, and design stories.</p>
+        </article>
+      </section>
+
+      <section class="section" id="work" data-track-section="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2>Projects with real hardware behind them.</h2>
+        </div>
+        <div class="filters" aria-label="Project filters">
+          <button class="filter active" type="button" data-filter="all">All</button>
+          <button class="filter" type="button" data-filter="electrical">Electrical</button>
+          <button class="filter" type="button" data-filter="programming">Programming</button>
+          <button class="filter" type="button" data-filter="visualization">3D</button>
+        </div>
+        <div class="project-grid" data-project-grid></div>
+      </section>
+
+      <section class="feature-band" data-track-section="formula_sae_context">
+        <div class="feature-image">
+          <img src="assets/sdm25-render.png" alt="Rendered Formula SAE race car" />
+        </div>
+        <div class="feature-copy">
+          <p class="eyebrow">Formula SAE context</p>
+          <h2>Engineering work shaped by testing, iteration, and team constraints.</h2>
+          <p>
+            Many of these projects come from Sun Devil Motorsports, where clean
+            design has to survive real packaging limits, noisy data, changing
+            requirements, and the pressure of making the car work.
+          </p>
+        </div>
+      </section>
+
+      <section class="section about" id="about" data-track-section="about">
+        <div class="portrait">
+          <img src="assets/headshot.png" alt="Matthew McConnell headshot" />
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">About</p>
+          <h2>Electrical engineering student at Arizona State University.</h2>
+          <p>
+            I regularly work on custom hardware projects including PCB design,
+            embedded systems, and prototyping, with a focus on clean design and
+            practical performance. As part of ASU's Sun Devil Motorsports Formula
+            SAE team, I collaborate on real-world engineering challenges that
+            require rigorous testing, iteration, and teamwork.
+          </p>
+          <p>
+            I am driven by curiosity, attention to detail, and the satisfaction
+            of building things that work well.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="skills" data-track-section="skills">
+        <div class="section-heading">
+          <p class="eyebrow">Tools</p>
+          <h2>Software and skills I use often.</h2>
+        </div>
+        <div class="tool-grid">
+          <article><img src="assets/kicad.svg" alt="KiCad" title="KiCad" /></article>
+          <article><img src="assets/altium.svg" alt="Altium Designer" title="Altium Designer" /></article>
+          <article><img src="assets/blender.svg" alt="Blender" title="Blender" /></article>
+          <article><img src="assets/substance.svg" alt="Substance Painter" title="Substance Painter" /></article>
+          <article data-track-external="github_tool"><img src="assets/github.svg" alt="GitHub" title="GitHub" /></article>
+          <article><img src="assets/vscode.svg" alt="Visual Studio Code" title="Visual Studio Code" /></article>
+          <article><img src="assets/photoshop.png" alt="Adobe Photoshop" title="Adobe Photoshop" /></article>
+          <article><img src="assets/ms-office.svg" alt="Microsoft Office" title="Microsoft Office" /></article>
+          <article><img src="assets/esp-idf.svg" alt="ESP-IDF" title="ESP-IDF" /></article>
+        </div>
+        <div class="skill-cloud" aria-label="Technical skills">
+          <span>PCB layout</span>
+          <span>Schematic design</span>
+          <span>CAN bus</span>
+          <span>ESP32</span>
+          <span>Sensor systems</span>
+          <span>Embedded programming</span>
+          <span>3D rendering</span>
+          <span>Rapid prototyping</span>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" data-track-section="contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Want to talk hardware, rendering, or embedded systems?</h2>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="https://www.linkedin.com/in/matthew-mcconnell-b171b92a3/" data-track-external="linkedin">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Matthew McConnell</span>
+      <span>Engineering and design portfolio</span>
+    </footer>
+
+    <dialog class="project-dialog" data-dialog>
+      <button class="dialog-close" type="button" data-close aria-label="Close project">x</button>
+      <div class="dialog-gallery">
+        <button class="gallery-nav previous" type="button" data-gallery-prev aria-label="Previous image">&lt;</button>
+        <img data-dialog-image alt="" />
+        <button class="gallery-nav next" type="button" data-gallery-next aria-label="Next image">&gt;</button>
+        <p class="gallery-count" data-gallery-count></p>
+      </div>
+      <div class="dialog-body">
+        <p class="eyebrow" data-dialog-category></p>
+        <h2 data-dialog-title></h2>
+        <p data-dialog-description></p>
+        <div class="tag-list" data-dialog-tags></div>
+        <div class="dialog-actions" data-dialog-actions hidden>
+          <button class="button primary" type="button" data-download-open data-track-button="datasheet_desk_download_open">Download Now</button>
+          <a
+            class="button secondary"
+            href="https://github.com/MatthewM140/Datasheet-Desk"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-track-external="github_datasheet_desk"
+          >View on GitHub</a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="download-dialog" data-download-dialog>
+      <button class="dialog-close" type="button" data-download-close aria-label="Close download options">x</button>
+      <p class="eyebrow">Desktop application</p>
+      <h2>Datasheet Desk <span>v1.0</span></h2>
+      <p>
+        Choose a setup wizard for a clean Windows installation or the portable
+        package for an extract-and-run copy.
+      </p>
+      <div class="download-actions">
+        <a class="button primary" href="/downloads/DatasheetDesk-Setup-v1.0.exe" download data-download-installer data-track-download="datasheet_desk_installer">Download Installer</a>
+        <a class="button secondary" href="/downloads/DatasheetDesk-windows-x64.zip" download data-download-portable data-track-download="datasheet_desk_portable">Download Portable ZIP</a>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+    <script
+      defer
+      src="https://matthew.engineering/analytics-tracker.js"
+      data-endpoint="https://matthew.engineering/api/analytics/track"
+      data-enabled="true"
+    ></script>
+  </body>
+</html>
