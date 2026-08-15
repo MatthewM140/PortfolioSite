@@ -1,15 +1,15 @@
 const projects = [
   {
-    title: "Custom Digital Dashboard",
-    trackId: "formula_sae_daq",
+    title: "SDM 27 Wheel Boards",
+    trackId: "sdm27_wheel_boards",
     category: "electrical",
-    label: "Electrical / Programming",
-    images: ["assets/dashboard.png"],
+    label: "Electrical",
+    images: ["assets/sdm27-wheel-boards-render.png"],
     summary:
-      "Formula SAE digital dash with a TFT display, RGB status LEDs, CAN data, and a configurable driver interface.",
+      "Updated wheel sensor boards for SDM 27 with a smaller PCB footprint and faster CAN FD data path.",
     description:
-      "Formula SAE digital dashboard with a 5-inch TFT display, 32 RGB LEDs for status indication and RPM display, and a configurable interface driven by live CAN data. The goal is to create a driver-facing system that can surface the important vehicle states quickly while remaining flexible enough to change as the car evolves.",
-    tags: ["CAN", "TFT display", "RGB indicators", "Formula SAE"],
+      "New-generation wheel boards for the SDM 27 Formula SAE car, redesigned for a 40% board area reduction while upgrading the vehicle data path to CAN FD. The smaller package helps with corner packaging and serviceability, while the faster bus gives the system more headroom for high-rate wheel sensor data as the car evolves.",
+    tags: ["CAN FD", "40% smaller PCB", "Wheel sensors", "Formula SAE"],
   },
   {
     title: "Outboard Wheel Sensor Board",
@@ -27,6 +27,24 @@ const projects = [
     description:
       "Wheel-mounted sensor board for a Formula SAE car, capturing per-corner brake temperature, tire thermal distribution, and wheel speed. It combines a standard temperature sensor with an infrared thermal camera for detailed heat mapping, while wheel speed is measured with a reluctor. Data is sent over CAN to the vehicle's central logger, with both vehicle and auxiliary CAN networks using software-configurable termination. The board is designed around an ESP32-S3.",
     tags: ["PCB design", "ESP32-S3", "Dual CAN", "Sensors"],
+  },
+  {
+    title: "ESP32-S3 Graphing Calculator",
+    trackId: "esp32_s3_graphing_calculator",
+    category: "electrical",
+    label: "Electrical / Programming",
+    images: [
+      "assets/esp32-s3-calculator-board.png",
+      "assets/esp32-s3-calculator-detail.png",
+      "assets/esp32-s3-calculator-keypad.png",
+      "assets/esp32-s3-calculator-kicad-clipboard.png",
+      "assets/esp32-s3-calculator-keypad-kicad.png",
+    ],
+    summary:
+      "Custom embedded handheld computer and graphing calculator built around an ESP32-S3, flexible keypad, battery power, camera, and SD storage.",
+    description:
+      "In-progress custom graphing calculator and embedded handheld computer designed from the PCB up. The current ESP32-S3 revision integrates a flexible keypad, battery power, USB-C, SD card storage, Wi-Fi and Bluetooth, and an OV2460 camera module into a compact calculator-style hardware platform. I designed the schematic, PCB layout, keypad, hardware architecture, and firmware direction, with the next revision planned around an F133-A Linux microprocessor for a more capable handheld computing environment.",
+    tags: ["ESP32-S3", "Flexible keypad", "Graphing calculator", "OV2460 camera", "SD card"],
   },
   {
     title: "BSPD Safety Circuit",
@@ -171,6 +189,7 @@ function updateGallery() {
   dialogImage.alt = `${activeProject.title} image ${activeImageIndex + 1}`;
   galleryCount.textContent = `${activeImageIndex + 1} / ${images.length}`;
   const hasGallery = images.length > 1;
+  dialogImage.closest(".dialog-gallery").classList.toggle("single-image", !hasGallery);
   galleryPrevious.hidden = !hasGallery;
   galleryNext.hidden = !hasGallery;
   galleryCount.hidden = !hasGallery;
@@ -212,7 +231,9 @@ downloadButton.addEventListener("click", () => downloadDialog.showModal());
 downloadClose.addEventListener("click", () => downloadDialog.close());
 
 dialog.addEventListener("click", (event) => {
-  if (event.target === dialog) dialog.close();
+  const clickedDialogBackdrop = event.target === dialog;
+  const clickedDialogChrome = event.target.closest(".dialog-gallery, .dialog-body, .dialog-close");
+  if (clickedDialogBackdrop || !clickedDialogChrome) dialog.close();
 });
 
 downloadDialog.addEventListener("click", (event) => {
@@ -321,4 +342,3 @@ function initLightField() {
 }
 
 renderProjects();
-initLightField();
