@@ -153,7 +153,7 @@ a {
 
 .eyebrow {
   margin: 0 0 0.9rem;
-  color: var(--accent-2);
+  color: #d8dde4;
   font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -339,7 +339,7 @@ p {
 }
 
 .intro-strip span {
-  color: var(--accent-3);
+  color: var(--muted);
   font-weight: 900;
 }
 
@@ -415,7 +415,7 @@ p {
 
 .project-meta {
   margin-bottom: 0.75rem;
-  color: var(--accent-2);
+  color: #d8dde4;
   font-size: 0.75rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -656,7 +656,7 @@ p {
 }
 
 .download-dialog h2 span {
-  color: var(--accent-2);
+  color: var(--muted);
   font-size: 0.42em;
   vertical-align: middle;
 }
