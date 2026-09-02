@@ -478,7 +478,11 @@ p {
 
 .motorsports-logo {
   grid-area: logo;
-  width: clamp(7rem, 12vw, 10rem);
+  width: clamp(7rem, 10vw, 9rem);
+  max-width: 100%;
+  height: auto;
+  max-height: 7rem;
+  object-fit: contain;
   align-self: center;
   justify-self: center;
 }
@@ -797,11 +801,14 @@ p {
   }
 
   .motorsports-links {
-    justify-content: flex-start;
+    width: 100%;
+    justify-content: center;
   }
 
   .motorsports-logo {
-    justify-self: start;
+    width: 6.5rem;
+    max-height: 5rem;
+    justify-self: center;
   }
 }
 
@@ -816,6 +823,21 @@ p {
 
   .hero-panel {
     padding: 0.6rem;
+  }
+
+  .motorsports-section {
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .motorsports-logo {
+    width: 5.5rem;
+    max-height: 4.25rem;
+  }
+
+  .motorsports-links .button {
+    flex: 1 1 100%;
+    text-align: center;
   }
 
   .dialog-gallery {
