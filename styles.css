@@ -134,6 +134,7 @@ a {
   object-fit: cover;
   opacity: 0.42;
   transform: scale(1.04);
+  filter: blur(2px);
   mask-image: linear-gradient(180deg, #000 0 88%, transparent 100%);
 }
 
@@ -169,16 +170,16 @@ p {
 h1 {
   max-width: 12ch;
   margin-bottom: 1rem;
-  font-size: clamp(4rem, 10vw, 8.8rem);
-  line-height: 0.88;
+  font-size: clamp(2.8rem, 6.2vw, 5.6rem);
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
 h2 {
-  max-width: 18ch;
+  max-width: 20ch;
   margin-bottom: 1rem;
-  font-size: clamp(2rem, 4.6vw, 4.6rem);
-  line-height: 0.98;
+  font-size: clamp(1.85rem, 3.4vw, 3.4rem);
+  line-height: 1.05;
   letter-spacing: 0;
 }
 
@@ -254,9 +255,9 @@ p {
 .filter.active,
 .gallery-nav:hover,
 .dialog-close:hover {
-  border-color: rgba(40, 199, 183, 0.7);
+  border-color: rgba(255, 255, 255, 0.38);
   color: #ffffff;
-  background: rgba(40, 199, 183, 0.08);
+  background: rgba(255, 255, 255, 0.08);
   box-shadow: none;
   transform: translateY(-1px);
 }
@@ -308,39 +309,13 @@ p {
   font-size: 0.9rem;
 }
 
-.intro-strip,
 .section,
 .feature-band,
+.motorsports-section,
 .contact,
 .site-footer {
   width: min(1180px, calc(100% - 2rem));
   margin-inline: auto;
-}
-
-.intro-strip {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-  gap: 1px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--line);
-}
-
-.intro-strip article {
-  min-height: 13rem;
-  padding: 1.25rem;
-  background: var(--panel);
-}
-
-.intro-strip h2 {
-  max-width: none;
-  font-size: clamp(1.7rem, 2.7vw, 2.6rem);
-  overflow-wrap: anywhere;
-}
-
-.intro-strip span {
-  color: var(--muted);
-  font-weight: 900;
 }
 
 .section {
@@ -348,11 +323,13 @@ p {
 }
 
 .section-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 2rem;
   margin-bottom: 1.4rem;
+  text-align: left;
+}
+
+.section-heading h2 {
+  max-width: 20ch;
+  margin-bottom: 0;
 }
 
 .filters {
@@ -388,7 +365,7 @@ p {
 }
 
 .project-card:hover {
-  border-color: rgba(40, 199, 183, 0.58);
+  border-color: rgba(255, 255, 255, 0.32);
   box-shadow: none;
   transform: translateY(-2px);
 }
@@ -480,7 +457,58 @@ p {
 }
 
 .feature-copy h2 {
-  font-size: clamp(2rem, 3.3vw, 3.4rem);
+  font-size: clamp(1.85rem, 2.8vw, 3rem);
+}
+
+.motorsports-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 28rem);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "copy logo"
+    "copy links";
+  align-items: center;
+  gap: 1.5rem clamp(1.25rem, 4vw, 3rem);
+  margin-top: 1rem;
+  min-height: 16rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.motorsports-logo {
+  grid-area: logo;
+  width: clamp(7rem, 12vw, 10rem);
+  align-self: center;
+  justify-self: center;
+}
+
+.motorsports-copy {
+  grid-area: copy;
+  align-self: center;
+  max-width: 38rem;
+}
+
+.motorsports-copy h2 {
+  max-width: 18ch;
+  font-size: clamp(1.55rem, 2.2vw, 2.25rem);
+}
+
+.motorsports-actions {
+  display: contents;
+}
+
+.motorsports-links {
+  grid-area: links;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: end;
+  gap: 0.75rem;
+}
+
+.motorsports-links .button {
+  flex: 0 0 auto;
 }
 
 .about {
@@ -556,6 +584,7 @@ p {
 
 .contact h2 {
   max-width: 16ch;
+  font-size: clamp(1.65rem, 2.5vw, 2.5rem);
 }
 
 .site-footer {
@@ -652,7 +681,7 @@ p {
 .download-dialog h2 {
   max-width: none;
   margin-right: 2.5rem;
-  font-size: clamp(2rem, 4vw, 2.65rem);
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
 }
 
 .download-dialog h2 span {
@@ -720,7 +749,7 @@ p {
 .dialog-body h2 {
   max-width: 24ch;
   margin-bottom: 0;
-  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-size: clamp(1.7rem, 2.6vw, 2.65rem);
 }
 
 .dialog-body p {
@@ -752,10 +781,27 @@ p {
   }
 
   .section-heading,
+  .motorsports-section,
   .contact,
   .site-footer {
     align-items: start;
     flex-direction: column;
+  }
+
+  .motorsports-section {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "logo"
+      "links";
+  }
+
+  .motorsports-links {
+    justify-content: flex-start;
+  }
+
+  .motorsports-logo {
+    justify-self: start;
   }
 }
 
@@ -765,7 +811,7 @@ p {
   }
 
   h1 {
-    font-size: 3.45rem;
+    font-size: 2.65rem;
   }
 
   .hero-panel {

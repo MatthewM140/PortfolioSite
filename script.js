@@ -100,7 +100,7 @@ const projects = [
     trackId: "sdm25_visualization",
     category: "visualization",
     label: "3D Visualization",
-    images: ["assets/sdm25-render.png"],
+    images: ["assets/sdm25-render.png", "assets/shocks_blend_SS.png"],
     summary:
       "Photorealistic render work for Sun Devil Motorsports' 2025 Formula SAE car.",
     description:
